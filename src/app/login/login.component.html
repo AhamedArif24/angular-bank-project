@@ -1,0 +1,25 @@
+
+<div class="text-white mt-3 ps-3">
+   <h3> {{ data}}</h3>
+
+</div>
+ <h1 class="text-center text-white mt-3">Sign In</h1>
+<form style="background-color:rgba(251, 251, 251, 0.36); border-radius: 10px;" action="" class="mt-5 p-3 w-50 container text-center">
+
+    <div class="p-2 mt-2">
+
+        <input (change)="acnoChange($event)"  id="u1" name="uname" style="border: none;" class="form-control mt-2 p-2" type="text" [placeholder]="data1">
+
+
+    </div>
+
+    <div class="p-2 mt-2">
+
+        <input (change)="passChange($event)" id="p1" name="password" class="form-control mt-2 p-2" type="password" placeholder="Enter password">
+
+
+    </div>
+
+    <button (click)="login()" class="btn btn-light mt-3 p-2 text-info text-center" >Login</button>
+
+</form>
