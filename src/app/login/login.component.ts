@@ -25,24 +25,24 @@ export class LoginComponent {
 
 
   }
-  // login(accno:any,passw:any){
-  //   if(accno in this.userDetailss)
-  //   {
-  //     if(passw==this.userDetailss[accno]['password'])
-  //     {
-  //       alert("You are successfully logged")
-  //     }
-  //     else{
+  login(){
+    if(this.acno in this.userDetailss)
+    {
+      if(this.pass==this.userDetailss[this.acno]['password'])
+      {
+        alert("You are successfully logged")
+      }
+      else{
 
-  //       alert("enter correct password")
-  //     }
-  //   }
-  //   else{
-  //     alert("please enter accno")
-  //   }
+        alert("enter correct password")
+      }
+    }
+    else{
+      alert("please enter accno")
+    }
 
     
-  // }
+   }
 
   // acnoChange(event:any){
   //   this.acno=event.target.value
@@ -55,21 +55,5 @@ export class LoginComponent {
     
     
   // }
-  login(accno:any,passw:any){
-    if(accno.value in this.userDetailss)
-    {
-      if(passw.value==this.userDetailss[accno.value]['password'])
-      {
-        alert("You are successfully logged")
-      }
-      else{
-        alert("enter correct password")
-      }
-    }
-    else{
-      alert("please enter accno")
-    }
-
-    
-  }
+  
 }
