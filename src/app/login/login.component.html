@@ -8,18 +8,18 @@
 
     <div class="p-2 mt-2">
 
-        <input (change)="acnoChange($event)"  id="u1" name="uname" style="border: none;" class="form-control mt-2 p-2" type="text" [placeholder]="data1">
+        <input #accno1  id="u1" name="uname" style="border: none;" class="form-control mt-2 p-2" type="text" [placeholder]="data1">
 
 
     </div>
 
     <div class="p-2 mt-2">
 
-        <input (change)="passChange($event)" id="p1" name="password" class="form-control mt-2 p-2" type="password" placeholder="Enter password">
+        <input #passw1  id="p1" name="password" class="form-control mt-2 p-2" type="password" placeholder="Enter password">
 
 
     </div>
 
-    <button (click)="login()" class="btn btn-light mt-3 p-2 text-info text-center" >Login</button>
+    <button (click)="login(accno1,passw1)" class="btn btn-light mt-3 p-2 text-info text-center" >Login</button>
 
 </form>

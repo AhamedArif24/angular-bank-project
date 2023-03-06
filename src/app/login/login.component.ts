@@ -25,10 +25,40 @@ export class LoginComponent {
 
 
   }
-  login(){
-    if(this.acno in this.userDetailss)
+  // login(accno:any,passw:any){
+  //   if(accno in this.userDetailss)
+  //   {
+  //     if(passw==this.userDetailss[accno]['password'])
+  //     {
+  //       alert("You are successfully logged")
+  //     }
+  //     else{
+
+  //       alert("enter correct password")
+  //     }
+  //   }
+  //   else{
+  //     alert("please enter accno")
+  //   }
+
+    
+  // }
+
+  // acnoChange(event:any){
+  //   this.acno=event.target.value
+  //   // console.log(this.acno);
+    
+  // }
+  // passChange(event:any)
+  // {
+  //   this.pass=event.target.value
+    
+    
+  // }
+  login(accno:any,passw:any){
+    if(accno.value in this.userDetailss)
     {
-      if(this.pass==this.userDetailss[this.acno]['password'])
+      if(passw.value==this.userDetailss[accno.value]['password'])
       {
         alert("You are successfully logged")
       }
@@ -40,18 +70,6 @@ export class LoginComponent {
       alert("please enter accno")
     }
 
-    
-  }
-
-  acnoChange(event:any){
-    this.acno=event.target.value
-    // console.log(this.acno);
-    
-  }
-  passChange(event:any)
-  {
-    this.pass=event.target.value
-    
     
   }
 }
