@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-login',
@@ -25,12 +26,16 @@ export class LoginComponent {
 
 
   }
+  constructor(private rout:Router ){
+
+  }
   login(){
     if(this.acno in this.userDetailss)
     {
       if(this.pass==this.userDetailss[this.acno]['password'])
       {
         alert("You are successfully logged")
+        this.rout.navigateByUrl("dashboard")
       }
       else{
 
