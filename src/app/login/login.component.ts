@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
+import { DataService } from '../services/data.service';
 
 @Component({
   selector: 'app-login',
@@ -17,37 +18,31 @@ export class LoginComponent {
   acno:any
   pass:any
 
-  userDetailss:any={
-    1000:{username:"anu",acno:1000,password:"abc123",balance:0},
-    1001:{username:"ahamed",acno:1001,password:"abc345",balance:0},
-    1002:{username:"abus",acno:1002,password:"abc1567",balance:0},
-    1003:{username:"abusi",acno:1003,password:"abc1789",balance:0},
-
-
-
-  }
-  constructor(private rout:Router ){
+ 
+  constructor(private rout:Router,private ds:DataService ){
 
   }
   login(){
-    if(this.acno in this.userDetailss)
+    const result=this.ds.login(this.acno,this.pass)
+    if(this.acno>=0)
     {
-      if(this.pass==this.userDetailss[this.acno]['password'])
+      if(result)
       {
         alert("You are successfully logged")
         this.rout.navigateByUrl("dashboard")
       }
-      else{
-
-        alert("enter correct password")
+      else
+      {
+        alert("incorrect password")
       }
     }
     else{
-      alert("please enter accno")
+      alert("Don't be empty this field")
     }
+  }
 
     
-   }
+    
 
   // acnoChange(event:any){
   //   this.acno=event.target.value
