@@ -39,6 +39,48 @@ export class DataService {
 
     
    }
+   deposit(accno:any,pass:any,amount:any)
+   {
+      var amnt=parseInt(amount)
+      if(accno in this.userDetailss)
+      {
+        if(pass==this.userDetailss[accno]['password'])
+        {
+            this.userDetailss[accno]['balance']+=amnt
+            return this.userDetailss[accno]['balance']
+        }
+        else{
+          return false
+        }
+      }
+      else{
+        return false
+      }
+   }
+   withdrawl(accno:any,pass:any,amount:any)
+   {
+      var amnt=parseInt(amount)
+      if(accno in this.userDetailss)
+      {
+        if(pass==this.userDetailss[accno]['password'])
+        {
+          if(amnt<=this.userDetailss[accno]['balance'])
+          {
+            this.userDetailss[accno]['balance']-=amnt
+            return this.userDetailss[accno]['balance']
+          }
+          else{
+            alert("insufficient amount please enter another amount")
+          }
+        }
+        else{
+          return false
+        }
+      }
+      else{
+        return false
+      }
+   }
   
 
   constructor() { }
